@@ -12,7 +12,8 @@ const Home = () => {
     }
     return (
         <div>
-          
+            <Banner></Banner>
+            <PopularClass></PopularClass>
         </div>
     );
 };
