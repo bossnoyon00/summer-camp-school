@@ -3,6 +3,7 @@ import { useContext } from "react";
 import Banner from "../Banner/Banner";
 import PopularClass from "../PopularClass/PopularClass";
 import { AuthContext } from "../provider/AuthProvider";
+import PopularInstructor from "../PopularInstructor/PopularInstructor";
 
 
 const Home = () => {
@@ -14,6 +15,7 @@ const Home = () => {
         <div>
             <Banner></Banner>
             <PopularClass></PopularClass>
+            <PopularInstructor></PopularInstructor>
         </div>
     );
 };

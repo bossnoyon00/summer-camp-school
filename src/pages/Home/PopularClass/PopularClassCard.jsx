@@ -1,7 +1,7 @@
 import React from 'react';
 
 const PopularClassCard = ({ pClass }) => {
-    console.log(pClass);
+    // console.log(pClass);
     return (
         <div className="w-full shadow-xl rounded-lg">
             <figure className="aspect-w-3 aspect-h-2">

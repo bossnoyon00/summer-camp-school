@@ -4,6 +4,7 @@ import { useForm } from 'react-hook-form';
 import { Link, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import { AuthContext } from '../provider/AuthProvider';
+import GoogleSignIn from '../Home/GoogleSignIn/GoogleSignIn';
 
 const Login = () => {
     const {
@@ -95,7 +96,9 @@ const Login = () => {
                                 Don't have an account? <Link to="/signup">Signup</Link>
                             </p>
                             <div className="divider mb-0">OR</div>
+
                         </form>
+                        <GoogleSignIn></GoogleSignIn>
                     </div>
                 </div>
             </div>
