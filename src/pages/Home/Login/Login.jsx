@@ -42,7 +42,56 @@ const Login = () => {
 
     return (
         <div>
-            
+            <div className="hero overflow-y-auto mt-4 min-h-screen ">
+                <div className="hero-content flex-col lg:flex-row">
+                    <div className="card flex-shrink-0 max-w-sm   outline outline-offset-2 outline-orange-300  bg-base-100">
+                        <form onSubmit={handleSubmit(onSubmit)} className="card-body">
+                            <div className="form-control">
+                                <label className="label">
+                                    <span className="label-text">Email</span>
+                                </label>
+                                <input
+                                    type="email"
+                                    {...register('email', { required: true })}
+                                    name="email"
+                                    placeholder="email"
+                                    className="input input-bordered"
+                                />
+                                {errors.email && (
+                                    <p className="text-red-600">Please enter a valid email.</p>
+                                )}
+                            </div>
+                            <div className="form-control">
+                                <label className="label">
+                                    <span className="label-text">Password</span>
+                                </label>
+                                <input
+                                    type={showPassword ? 'text' : 'password'}
+                                    {...register('password', { required: true })}
+                                    name="password"
+                                    placeholder="password"
+                                    className="input input-bordered relative"
+                                />
+                                <p onClick={() => setShowPassword(!showPassword)}>
+                                    <small className=" absolute -mt-7 ml-48 ">
+                                        {showPassword ? (
+                                            <FaEyeSlash></FaEyeSlash>
+                                        ) : (
+                                            <FaEye></FaEye>
+                                        )}
+                                    </small>
+                                </p>
+                                {errors.password && (
+                                    <p className="text-red-600">Please enter your password.</p>
+                                )}
+                            </div>
+                            <div className="form-control mt-6">
+                                <input
+                                    className="btn text-white bg-red-500 hover:bg-black"
+                                    type="submit"
+                                    value="login"
+                                />
+                            </div>
                             <p>
                                 Don't have an account? <Link to="/signup">Signup</Link>
                             </p>
