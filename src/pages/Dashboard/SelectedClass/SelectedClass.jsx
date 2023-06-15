@@ -40,7 +40,78 @@ const SelectedClass = () => {
     return (
         <div className="w-full">
 
-           
+            <div className="uppercase font-semibold h-[60px] flex justify-evenly items-center">
+                <h3 className="text-3xl">Total Items: {cart.length}</h3>
+                {/* <h3 className="text-3xl">Total Price: ${className}</h3> */}
+                {/* <Link to='/dashboard/payment'>
+                    <button className="btn btn-warning btn-sm">PAY</button>
+                </Link> */}
+            </div>
+            <div className="overflow-x-auto w-full">
+                <table className="table w-full">
+                    {/* head */}
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Image</th>
+                            <th>Class Name</th>
+                            <th>Instructor Name</th>
+                            <th>Instructor Email</th>
+                            <th>Class Price</th>
+                            <th>Available Seats</th>
+                            <th>Delete</th>
+                            <th>Pay</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {
+                            cart.map((item, index) => <tr
+                                key={item._id}
+                            >
+                                <td>
+                                    {index + 1}
+                                </td>
+                                <td>
+                                    <div className="avatar">
+                                        <div className="mask mask-squircle w-12 h-12">
+                                            <img src={item.image} alt="Avatar Tailwind CSS Component" />
+                                        </div>
+                                    </div>
+                                </td>
+
+                                <td>
+                                    {item.className}
+                                </td>
+                                <td>
+                                    {item.instructorName}
+                                </td>
+                                <td>
+                                    {item.instructorEmail}
+                                </td>
+
+                                <td>
+                                    {item.classPrice}
+                                </td>
+                                <td>
+                                    {item.availableSeats}
+                                </td>
+                                <td>
+                                    <button onClick={() => handleDelete(item._id)} className='btn btn-primary'>
+                                        Delete
+                                    </button>
+                                </td>
+                                <td>
+                                    <Link to={`/dashboard/payment/${item._id}`}>
+                                        <button className="btn btn-warning btn-sm">PAY</button>
+                                    </Link>
+                                </td>
+                            </tr>)
+                        }
+
+
+                    </tbody>
+                </table>
+            </div>
         </div>
     );
 };
