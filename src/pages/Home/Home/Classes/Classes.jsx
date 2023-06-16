@@ -19,7 +19,7 @@ const Classes = () => {
                 setClasses(classData)
             })
     }, [])
-    console.log(classes);
+    // console.log(classes);
     return (
         <div>
             <h2 className='text-4xl text-center my-6 text-amber-700'>Approved Classes</h2>
