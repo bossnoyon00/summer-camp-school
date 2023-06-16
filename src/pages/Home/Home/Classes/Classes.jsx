@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import ShowClassNav from './ShowClassNav';
+// import { useContext } from 'react';
+// import { AuthContext } from '../../provider/AuthProvider';
 
 const Classes = () => {
     // const [loading] = useContext(AuthContext);

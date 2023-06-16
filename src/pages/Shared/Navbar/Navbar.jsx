@@ -100,8 +100,13 @@
 import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Home/provider/AuthProvider";
+import useAdmin from "../../Dashboard/AllUser/hook/useAdmin";
+import useInstructor from "../../Dashboard/AllUser/hook/useInstructor";
 
 const Navbar = () => {
+
+
+
 
     const [theme, setTheme] = useState(localStorage.getItem('theme') ? localStorage.getItem('theme') : 'light')
 
@@ -128,7 +133,8 @@ const Navbar = () => {
                 console.log(error);
             })
     }
-
+    const [isAdmin] = useAdmin();
+    const [isInstructor] = useInstructor();
 
     const navLists = <>
         <li>

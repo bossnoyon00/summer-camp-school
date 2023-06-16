@@ -183,7 +183,7 @@ const Signup = () => {
                                 />
                             </div>
                             <p>
-                                Already Have an Account in PowerPlay Fusion Edge?{' '}
+                                Already Have an Account in Martial?{' '}
                                 <Link to="/login">Login</Link>
                             </p>
                             <div className="divider mb-0">OR</div>

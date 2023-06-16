@@ -1,11 +1,15 @@
 import React from 'react';
 import usePayment from '../AllUser/hook/usePayment';
-import PaymentHistoryCard from './PaymentHistoryCard';
+import moment from 'moment/moment';
 
 const PaymentHistory = () => {
 
     const [paymentHistory] = usePayment();
     console.log(paymentHistory);
+
+    const formatDateTime = (date) => {
+        return moment(date).format('HH:mm:ss,  DD-MM-YYYY');
+    };
     return (
         <div>
             <h2 className='text-4xl text-red-900'>Payment History : {paymentHistory.length}</h2>
@@ -23,12 +27,12 @@ const PaymentHistory = () => {
                                 <th>Class Name</th>
                                 <th>Class Price</th>
                                 <th>Email</th>
+                                <th>Date</th>
                                 <th>Status</th>
                             </tr>
                         </thead>
                         <tbody>
                             {
-
                                 paymentHistory.map((payFile, index) =>
                                     <tr>
                                         <td>
@@ -48,6 +52,7 @@ const PaymentHistory = () => {
                                         <td>
                                             {payFile.email}
                                         </td>
+                                        <td className='text-center'>{formatDateTime(payFile.date)}</td>
                                         <td>{payFile.status}</td>
 
                                     </tr>)

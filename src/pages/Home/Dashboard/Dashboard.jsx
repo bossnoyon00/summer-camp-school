@@ -16,6 +16,7 @@ const Dashboard = () => {
         return <progress className='progress w-56'></progress>;
     }
 
+  
     return (
         <div className="drawer lg:drawer-open">
             <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
@@ -48,7 +49,6 @@ const Dashboard = () => {
                         ) : isInstructor ? (
                             <Reveal cascade damping={0.2} duration={500}>
                                 <li className='text-xl font-semibold'>
-
                                     <Link to='/dashboard/addClass'>  <FaFileDownload></FaFileDownload>Add Classes</Link>
                                 </li>
                                 <li className='text-xl font-semibold'>
@@ -67,8 +67,7 @@ const Dashboard = () => {
                                     <Link to='/dashboard/selectedClass'> <FaAddressBook></FaAddressBook>Selected Classes</Link>
                                 </li>
                                 <li className='text-xl font-semibold'>
-
-                                    <Link to='/dashboard/paymentHistory'> <FaUniversalAccess></FaUniversalAccess>Payment Successfully</Link>
+                                    <Link to='/dashboard/paymentHistory'> <FaUniversalAccess></FaUniversalAccess>Payment History</Link>
                                 </li>
                             </Reveal>
                         )}
